@@ -1,0 +1,23 @@
+{
+  "name": "typescript-cli-tool-boilerplate",
+  "version": "0.1.0",
+  "author": "",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "bin": "./dist/index.js",
+  "scripts": {
+    "format": "prettier . --write",
+    "exec": "ts-node scripts/exec.ts",
+    "tc": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "nodemon": "2.0.15",
+    "prettier": "latest",
+    "ts-node": "10.5.0",
+    "typescript": "4.6.2"
+  },
+  "dependencies": {
+    "kafkajs": "^1.16.0"
+  }
+}
