@@ -30,5 +30,5 @@ npm run exec start_consumer
 Produce message
 
 ```bash
-npmrun exec produce_message
+npm run exec produce_message [Message]
 ```
