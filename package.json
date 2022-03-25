@@ -7,7 +7,8 @@
   "bin": "./dist/index.js",
   "scripts": {
     "format": "prettier . --write",
-    "exec": "ts-node scripts/exec.ts",
+    "start-consumer": "ts-node src/bin/start_consumer.ts",
+    "produce-message": "ts-node src/bin/produce_message.ts",
     "tc": "tsc --noEmit"
   },
   "devDependencies": {

@@ -13,10 +13,8 @@ export class Producer {
 
   public send = async (params: ProducerRecord): Promise<RecordMetadata[]> => {
     await this.producer.connect();
-    try {
-      return this.producer.send(params);
-    } finally {
-      await this.producer.disconnect();
-    }
+    const sendResult = await this.producer.send(params);
+    await this.producer.disconnect();
+    return sendResult;
   };
 }

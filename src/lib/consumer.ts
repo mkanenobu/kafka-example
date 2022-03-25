@@ -11,17 +11,18 @@ export class Consumer {
   }
 
   public consume = async (): Promise<void> => {
-    await this.consumer.connect();
-    await this.consumer.subscribe({ topic: this.topic, fromBeginning: true });
+    await this.consumer.connect().then(() => console.log("Consumer connected"));
+    await this.consumer
+      .subscribe({ topic: this.topic, fromBeginning: true })
+      .then(() => console.log("Consumer subscribed"));
 
-    try {
-      return this.consumer.run({
-        eachMessage: async ({ message }) => {
-          console.log("Message received, ", message.value?.toString());
-        },
-      });
-    } finally {
-      await this.consumer.disconnect();
-    }
+    await this.consumer.run({
+      eachMessage: async ({ message }) => {
+        console.log("Message received:", message.value?.toString());
+      },
+      eachBatch: async ({ batch }) => {
+        console.log("Batch received:", batch);
+      },
+    });
   };
 }

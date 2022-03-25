@@ -24,11 +24,11 @@ docker compose up
 Start consumer
 
 ```bash
-npm run exec start_consumer
+npm run start-consumer
 ```
 
 Produce message
 
 ```bash
-npm run exec produce_message [Message]
+npm run produce-message [Message]
 ```
