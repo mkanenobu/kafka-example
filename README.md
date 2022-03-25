@@ -3,6 +3,7 @@
 ## Setup
 
 Create docker network
+
 ```bash
 docker network create kafka_example_network
 ```
@@ -25,6 +26,12 @@ Start consumer
 
 ```bash
 npm run start-consumer
+```
+
+Start char counter (consuming same topic as start-consumer's consumer)
+
+```bash
+npm run start-char-counter
 ```
 
 Produce message
